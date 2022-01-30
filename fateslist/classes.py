@@ -137,3 +137,14 @@ class Stats(BaseObject):
         embed.add_field(name="Bot Count (Total)",
                         value=str(self.bot_count_total))
         return embed
+
+class Vanity(BaseObject):
+    """
+        Vanoty is internally a part of the classes module (which provides all of fateslist's base classes and functions). 
+        It represents vanities (slugs) on Fates List. The exact parameters of stats may change and fateslist is designed to handle such changes automatically. 
+
+        Please see https://api.fateslist.xyz/api/docs/redoc#operation/get_vanity for a full list of parameters.
+
+        You should access parameters using object notation
+    """
+    ...

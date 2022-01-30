@@ -1,6 +1,6 @@
 import aiohttp
 from .http import BaseHTTP
-from .classes import Stats
+from .classes import Stats, Vanity
 
 class SystemClient(BaseHTTP):
     def __init__(self):
@@ -19,3 +19,16 @@ class SystemClient(BaseHTTP):
         if not api_res.success:
             return api_res
         return Stats(api_res.json)
+    
+    async def get_vanity(self, code: str):
+        """
+        Returns the vanity url for a given code
+        """
+        api_res = await self.request(
+            method="GET",
+            endpoint=f"/code/{code}",
+        )
+
+        if not api_res.success:
+            return api_res
+        return Vanity(api_res.json)

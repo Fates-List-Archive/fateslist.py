@@ -1,4 +1,6 @@
 import datetime
+import traceback
+
 def extract_time(td: datetime.timedelta) -> tuple:
     """
     Extracts time from a timedelta object.
@@ -14,3 +16,14 @@ def extract_time(td: datetime.timedelta) -> tuple:
     (s, h) = _t(td.seconds, 3600)
     (s, m) = _t(s, 60)
     return (td.days, h, m, s)
+
+def etrace(ex):
+    """
+    Get the traceback of an exception
+
+    Used internally by fateslist.py and our own tooling
+    """
+    try:
+        return "".join(traceback.format_exception(ex)) # COMPAT: Python 3.10 only
+    except:
+        return str(ex)
