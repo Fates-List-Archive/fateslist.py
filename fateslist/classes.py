@@ -1,6 +1,9 @@
 import fateslist.config as cfg
 from fateslist import api_modes, aiohttp
 from typing import Union, Optional
+from discord import Embed
+from .utils import extract_time
+import datetime
 
 class InvalidMode(Exception):
     """Raised when you don't have the required mode (package) to perform the action such as trying to do an asynchronous API request without having aiohttp_requests installed or trying to do a webhook without fastapi+uvicorn"""
@@ -97,3 +100,40 @@ class UserVotes(BaseObject):
         You should access parameters using object notation
     """
     ...
+
+class Stats(BaseObject):
+    """
+        Stats is internally a part of the classes module (which provides all of fateslist's base classes and functions). 
+        It represents stats on Fates List. The exact parameters of stats may change and fateslist is designed to handle such changes automatically. 
+
+        Please see https://api.fateslist.xyz/api/docs/redoc#operation/blstats for a full list of parameters.
+
+        You should access parameters using object notation
+    """
+    def embed(self):
+        """
+        Returns a embed of fates list stats
+        """
+        embed = Embed(title="Bot List Stats", description="Fates List Stats")
+        uptime_tuple = extract_time(datetime.timedelta(seconds=self.uptime))
+        # ttvr = Time Till Votes Reset
+        ttvr_tuple = extract_time(
+            (datetime.datetime.now().replace(day=1, second=0, minute=0, hour=0) +
+            datetime.timedelta(days=32)).replace(day=1) - datetime.datetime.now())
+        uptime = "{} days, {} hours, {} minutes, {} seconds".format(*uptime_tuple)
+        ttvr = "{} days, {} hours, {} minutes, {} seconds".format(*ttvr_tuple)
+        embed.add_field(name="Uptime", value=uptime)
+        embed.add_field(name="Time Till Votes Reset", value=ttvr)
+        embed.add_field(name="Worker PID", value=str(self.pid))
+        embed.add_field(name="Worker Number",
+                        value=self.workers.index(self.pid) + 1)
+        embed.add_field(
+            name="Workers",
+            value=f"{', '.join([str(w) for w in self.workers])} ({len(self.workers)} workers)",
+        )
+        embed.add_field(name="UP?", value=str(self.up))
+        embed.add_field(name="Server Uptime", value=str(self.server_uptime))
+        embed.add_field(name="Bot Count", value=str(self.bot_count))
+        embed.add_field(name="Bot Count (Total)",
+                        value=str(self.bot_count_total))
+        return embed

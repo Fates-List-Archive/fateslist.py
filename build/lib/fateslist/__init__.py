@@ -19,5 +19,6 @@ from fateslist.main import *
 from fateslist.config import *
 from fateslist.ws import *
 from fateslist.utils import *
+from fateslist.system import *
 
 __version__ = version
