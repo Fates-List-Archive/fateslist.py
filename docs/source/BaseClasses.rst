@@ -55,3 +55,4 @@ Base Classes
 .. module:: fateslist.utils
 
 .. autofunction:: extract_time
+.. autofunction:: etrace
