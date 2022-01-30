@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Main Classes" href="MainClasses.html" />
 
     <meta name="generator" content="sphinx-4.2.0, furo 2021.11.23"/>
-        <title>Base Classes - IBLPy 2.0.8 documentation</title>
+        <title>Base Classes - fateslist.py 1.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">IBLPy 2.0.8 documentation</div></a>
+      <a href="index.html"><div class="brand">fateslist.py 1.0.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -146,7 +146,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">IBLPy 2.0.8 documentation</span>
+  <span class="sidebar-brand-text">fateslist.py 1.0.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -184,186 +184,135 @@
           </label>
         </div>
         <article role="main">
-          <section id="module-IBLPy.classes">
-<span id="base-classes"></span><h1>Base Classes<a class="headerlink" href="#module-IBLPy.classes" title="Permalink to this headline">¶</a></h1>
+          <section id="module-fateslist.classes">
+<span id="base-classes"></span><h1>Base Classes<a class="headerlink" href="#module-fateslist.classes" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
-<dt class="sig sig-object py" id="IBLPy.classes.IBLBaseUser">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">IBLPy.classes.</span></span><span class="sig-name descname"><span class="pre">IBLBaseUser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">json</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#IBLPy.classes.IBLBaseUser" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="fateslist.classes.BaseUser">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">fateslist.classes.</span></span><span class="sig-name descname"><span class="pre">BaseUser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fateslist.classes.BaseUser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">fateslist.classes.BaseObject</span></code></p>
+<p>This is a base user on fateslist from which all bots and users extend from</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="fateslist.classes.BaseUser.__int__">
+<span class="sig-name descname"><span class="pre">__int__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fateslist.classes.BaseUser.__int__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the bot or user ID</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="fateslist.classes.BaseUser.__str__">
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fateslist.classes.BaseUser.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the name of the bot or user</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="fateslist.classes.BaseUser.dict">
+<span class="sig-name descname"><span class="pre">dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fateslist.classes.BaseUser.dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the class as a dict using the dict dunder property of the class</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#fateslist.classes.BaseUser.dict" title="fateslist.classes.BaseUser.dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="fateslist.classes.Bot">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">fateslist.classes.</span></span><span class="sig-name descname"><span class="pre">Bot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fateslist.classes.Bot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#fateslist.classes.BaseUser" title="fateslist.classes.BaseUser"><code class="xref py py-class docutils literal notranslate"><span class="pre">fateslist.classes.BaseUser</span></code></a></p>
+<p>Bot is internally a part of the classes module (which provides all of fateslist’s base classes and functions). 
+It represents a bot on Fates List. The exact parameters of an bot may change and fateslist is designed to handle such changes automatically.</p>
+<p>Please see <a class="reference external" href="https://api.fateslist.xyz/api/docs/redoc#operation/fetch_bot">https://api.fateslist.xyz/api/docs/redoc#operation/fetch_bot</a> for a full list of parameters.</p>
+<p>You should access parameters using object notation</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="fateslist.classes.Bot.__int__">
+<span class="sig-name descname"><span class="pre">__int__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fateslist.classes.Bot.__int__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the bot or user ID</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="fateslist.classes.Bot.__str__">
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fateslist.classes.Bot.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the name of the bot or user</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="fateslist.classes.Bot.dict">
+<span class="sig-name descname"><span class="pre">dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fateslist.classes.Bot.dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the class as a dict using the dict dunder property of the class</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#fateslist.classes.Bot.dict" title="fateslist.classes.Bot.dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="fateslist.classes.User">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">fateslist.classes.</span></span><span class="sig-name descname"><span class="pre">User</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fateslist.classes.User" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#fateslist.classes.BaseUser" title="fateslist.classes.BaseUser"><code class="xref py py-class docutils literal notranslate"><span class="pre">fateslist.classes.BaseUser</span></code></a></p>
+<p>User is internally a part of the classes module (which provides all of fateslist’s base classes and functions). 
+It represents a user on Fates List. The exact parameters of an user may change and fateslist is designed to handle such changes automatically.</p>
+<p>Please see <a class="reference external" href="https://api.fateslist.xyz/api/docs/redoc#operation/fetch_user">https://api.fateslist.xyz/api/docs/redoc#operation/fetch_user</a> for a full list of parameters.</p>
+<p>You should access parameters using object notation</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="fateslist.classes.User.__int__">
+<span class="sig-name descname"><span class="pre">__int__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fateslist.classes.User.__int__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the bot or user ID</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="fateslist.classes.User.__str__">
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fateslist.classes.User.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the name of the bot or user</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="fateslist.classes.User.dict">
+<span class="sig-name descname"><span class="pre">dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fateslist.classes.User.dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the class as a dict using the dict dunder property of the class</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#fateslist.classes.User.dict" title="fateslist.classes.User.dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="fateslist.classes.APIResponse">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">fateslist.classes.</span></span><span class="sig-name descname"><span class="pre">APIResponse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">json</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fateslist.classes.APIResponse" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>This is a base user on IBL from which all bots and users extend from</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="IBLPy.classes.IBLBaseUser.__int__">
-<span class="sig-name descname"><span class="pre">__int__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#IBLPy.classes.IBLBaseUser.__int__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the bot or user ID</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="IBLPy.classes.IBLBaseUser.__str__">
-<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#IBLPy.classes.IBLBaseUser.__str__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the name of the bot or user</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="IBLPy.classes.IBLBaseUser.clean">
-<span class="sig-name descname"><span class="pre">clean</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#IBLPy.classes.IBLBaseUser.clean" title="Permalink to this definition">¶</a></dt>
-<dd><p>Cleans up all the ugly stuff from the IBL API</p>
-</dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="IBLPy.classes.IBLBaseUser.dict">
-<span class="sig-name descname"><span class="pre">dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#IBLPy.classes.IBLBaseUser.dict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the class as a dict using the dict dunder property of the class</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#IBLPy.classes.IBLBaseUser.dict" title="IBLPy.classes.IBLBaseUser.dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
-</dd>
-</dl>
-</dd></dl>
-</dd></dl>
-<dl class="py class">
-<dt class="sig sig-object py" id="IBLPy.classes.IBLBot">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">IBLPy.classes.</span></span><span class="sig-name descname"><span class="pre">IBLBot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">json</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#IBLPy.classes.IBLBot" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#IBLPy.classes.IBLBaseUser" title="IBLPy.classes.IBLBaseUser"><code class="xref py py-class docutils literal notranslate"><span class="pre">IBLPy.classes.IBLBaseUser</span></code></a></p>
-<p>IBLBot is internally a part of the base_fn module (which provides all of IBLPy’s base classes and functions). 
-It represents a bot on IBL. The exact parameters of an IBLBot may change and IBLPy is designed to handle such changes automatically. 
-Here are the parameters that we know of right now:</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>id</strong> – The id of the bot. This will be a integer</p></li>
-<li><p><strong>username</strong> – The name of the bot. This will be a string</p></li>
-<li><p><strong>tags</strong> – The tags of the bot. To make it easier for you, IBLPy makes this a list instead of the comma seperated string returned by the IBL API. This will be a list</p></li>
-<li><p><strong>prefix</strong> – This is the prefix of the bot. This will be a string</p></li>
-<li><p><strong>owner</strong> – The name of the owner of the bot. For some reason, the IBL API does not give the owner ID. This will be a string</p></li>
-<li><p><strong>short</strong> – The short description of the bot. This will be a string</p></li>
-<li><p><strong>long</strong> – The long description of the bot. This will be a string</p></li>
-<li><p><strong>library</strong> – The library the bot is coded in. This will be a string</p></li>
-<li><p><strong>premium</strong> – Whether the bot is premium or not. This will be a boolean</p></li>
-<li><p><strong>staff</strong> – Whether the bot is a staff bot or not. This will be a boolean</p></li>
-<li><p><strong>nsfw</strong> – Whether the bot is marked as an NSFW (Not Safe For Work) bot or not. This will be a boolean</p></li>
-<li><p><strong>certified</strong> – Whether the bot is certified or not. This will be a boolean</p></li>
-<li><p><strong>servers</strong> – The server count of the bot. The API puts this in a analytics JSON object, but for simplicity, we provide this as just guild_count. This will be a integer</p></li>
-<li><p><strong>shards</strong> – The server count of the bot. The API puts this in a analytics JSON object, but for simplicity, we provide this as just shard_count. This will be a integer</p></li>
-<li><p><strong>votes</strong> – The amount of votes the bot has. The API puts this in a analytics JSON object, but for simplicity, we provide this as just votes. This will be a integer</p></li>
-<li><p><strong>invites</strong> – The amount of people who have invited your bot. The API puts this in a analytics JSON object, but for simplicity, we provide this as just invites. This will be a integer</p></li>
-<li><p><strong>banner</strong> – The bots banner. The API puts this in a links JSON object, but for simplicity, we provide this as just banner. This will be a string or None (if not found)</p></li>
-<li><p><strong>github</strong> – The bots github. The API puts this in a links JSON object, but for simplicity, we provide this as just github. This will be a string or None (if not found)</p></li>
-<li><p><strong>website</strong> – The bots website. The API puts this in a links JSON object, but for simplicity, we provide this as just website. This will be a string or None (if not found)</p></li>
-<li><p><strong>donate</strong> – The bots donation link. The API puts this in a links JSON object, but for simplicity, we provide this as just donate. This will be a string or None (if not found)</p></li>
-<li><p><strong>support</strong> – The bots support server. The API puts this in a links JSON object, but for simplicity, we provide this as just support. This will be a string or None (if not found)</p></li>
-</ul>
-</dd>
-</dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="IBLPy.classes.IBLBot.__int__">
-<span class="sig-name descname"><span class="pre">__int__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#IBLPy.classes.IBLBot.__int__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the bot or user ID</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="IBLPy.classes.IBLBot.__str__">
-<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#IBLPy.classes.IBLBot.__str__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the name of the bot or user</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="IBLPy.classes.IBLBot.clean">
-<span class="sig-name descname"><span class="pre">clean</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#IBLPy.classes.IBLBot.clean" title="Permalink to this definition">¶</a></dt>
-<dd><p>Cleans up all the ugly stuff from the IBL API</p>
-</dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="IBLPy.classes.IBLBot.dict">
-<span class="sig-name descname"><span class="pre">dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#IBLPy.classes.IBLBot.dict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the class as a dict using the dict dunder property of the class</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#IBLPy.classes.IBLBot.dict" title="IBLPy.classes.IBLBot.dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
-</dd>
-</dl>
-</dd></dl>
-</dd></dl>
-<dl class="py class">
-<dt class="sig sig-object py" id="IBLPy.classes.IBLUser">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">IBLPy.classes.</span></span><span class="sig-name descname"><span class="pre">IBLUser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">json</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">japi_data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#IBLPy.classes.IBLUser" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#IBLPy.classes.IBLBaseUser" title="IBLPy.classes.IBLBaseUser"><code class="xref py py-class docutils literal notranslate"><span class="pre">IBLPy.classes.IBLBaseUser</span></code></a></p>
-<p>IBLUser is internally a part of the base_fn module (which provides all of IBLPy’s base classes and functions). It represents a user on IBL. The exact parameters of an IBLUser may change and IBLPy is designed to handle such changes automatically. Here are the parameters that we know of right now:</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>id</strong> – The id of the user. This will be a integer</p></li>
-<li><p><strong>user</strong> – A JAPI user object (see [here](<a class="reference external" href="https://docs.japi.rest/#discord-user">https://docs.japi.rest/#discord-user</a>)). This will be a dict (the value of ‘data’) or None if not fetchable. <strong>This internally comes from japi.rest</strong></p></li>
-<li><p><strong>nickname</strong> – The nickname of the user. This will be a string or None (if not found)</p></li>
-<li><p><strong>about</strong> – The users description/about text. This will be a string</p></li>
-<li><p><strong>certified_dev</strong> – Whether the user is a certified developer or not. This will be a boolean</p></li>
-<li><p><strong>developer</strong> – Whether the user is a developer or not. This will be a boolean</p></li>
-<li><p><strong>staff</strong> – Whether the user is an IBL staff member or not. This will be a boolean</p></li>
-<li><p><strong>website</strong> – The users listed website. The API puts this in a links JSON object, but for simplicity, we provide this as just website. This will be a string or None (if not found)</p></li>
-</ul>
-</dd>
-</dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="IBLPy.classes.IBLUser.__int__">
-<span class="sig-name descname"><span class="pre">__int__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#IBLPy.classes.IBLUser.__int__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the bot or user ID</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="IBLPy.classes.IBLUser.__str__">
-<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#IBLPy.classes.IBLUser.__str__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the name of the bot or user</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="IBLPy.classes.IBLUser.clean">
-<span class="sig-name descname"><span class="pre">clean</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#IBLPy.classes.IBLUser.clean" title="Permalink to this definition">¶</a></dt>
-<dd><p>Cleans up all the ugly stuff from the IBL API</p>
-</dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="IBLPy.classes.IBLUser.dict">
-<span class="sig-name descname"><span class="pre">dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#IBLPy.classes.IBLUser.dict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the class as a dict using the dict dunder property of the class</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#IBLPy.classes.IBLUser.dict" title="IBLPy.classes.IBLUser.dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
-</dd>
-</dl>
-</dd></dl>
-</dd></dl>
-<dl class="py class">
-<dt class="sig sig-object py" id="IBLPy.classes.IBLAPIResponse">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">IBLPy.classes.</span></span><span class="sig-name descname"><span class="pre">IBLAPIResponse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">json</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#IBLPy.classes.IBLAPIResponse" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>IBLAPIResponse represents an API response in the IBLPy library</p>
+<p>APIResponse represents an API response in the fateslist library</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>res</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ClientResponse</span></code>) – This is the raw response from the API. 
 This will be a aiohttp ClientResponse</p></li>
-<li><p><strong>success</strong> – Whether the API response has succeeded or not (status less than 400)</p></li>
-<li><p><strong>error_msg</strong> – The error message reported by the Infinity Bot List API</p></li>
+<li><p><strong>done</strong> – Whether the API response has succeeded or not</p></li>
+<li><p><strong>success</strong> – If the API response has succeeded, this will be false. Similar to done but based on status code</p></li>
+<li><p><strong>reason</strong> – The error message reported by the Fates List API</p></li>
 <li><p><strong>message</strong> – Any messages returned by the API in the message field. Can be None if there are no messages</p></li>
 <li><p><strong>json</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>) – The JSON object sent by the API</p></li>
 <li><p><strong>status</strong> – The status code of the HTTP response received from the API</p></li>
@@ -373,21 +322,21 @@ This will be a aiohttp ClientResponse</p></li>
 </dd></dl>
 <p><strong>Exceptions</strong></p>
 <dl class="py class">
-<dt class="sig sig-object py" id="IBLPy.classes.InvalidMode">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">IBLPy.classes.</span></span><span class="sig-name descname"><span class="pre">InvalidMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#IBLPy.classes.InvalidMode" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="fateslist.classes.InvalidMode">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">fateslist.classes.</span></span><span class="sig-name descname"><span class="pre">InvalidMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fateslist.classes.InvalidMode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 <p>Raised when you don’t have the required mode (package) to perform the action such as trying to do an asynchronous API request without having aiohttp_requests installed or trying to do a webhook without fastapi+uvicorn</p>
 </dd></dl>
 <dl class="py class">
-<dt class="sig sig-object py" id="IBLPy.classes.IBLAPIRatelimit">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">IBLPy.classes.</span></span><span class="sig-name descname"><span class="pre">IBLAPIRatelimit</span></span><a class="headerlink" href="#IBLPy.classes.IBLAPIRatelimit" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="fateslist.classes.APIRatelimit">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">fateslist.classes.</span></span><span class="sig-name descname"><span class="pre">APIRatelimit</span></span><a class="headerlink" href="#fateslist.classes.APIRatelimit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 <p>Raised when you are being ratelimited by IBL. The ratelimit for posting stats is 3 requests per 5 minutes and is unknown/variable for getting stats from the API</p>
 </dd></dl>
 <p><strong>Votes</strong></p>
-<span class="target" id="module-IBLPy.ws"></span><dl class="py class">
-<dt class="sig sig-object py" id="IBLPy.ws.Vote">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">IBLPy.ws.</span></span><span class="sig-name descname"><span class="pre">Vote</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#IBLPy.ws.Vote" title="Permalink to this definition">¶</a></dt>
+<span class="target" id="module-fateslist.ws"></span><dl class="py class">
+<dt class="sig sig-object py" id="fateslist.ws.Vote">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">fateslist.ws.</span></span><span class="sig-name descname"><span class="pre">Vote</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fateslist.ws.Vote" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Represents a vote on IBL</p>
 <dl class="field-list simple">
@@ -400,6 +349,17 @@ This will be a aiohttp ClientResponse</p></li>
 <li><p><strong>test</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Whether this is a test webhook or not</p></li>
 <li><p><strong>timestamp</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – The timestamp (epoch) when the vote happened</p></li>
 </ul>
+</dd>
+</dl>
+</dd></dl>
+<p><strong>Utilities</strong></p>
+<span class="target" id="module-fateslist.utils"></span><dl class="py function">
+<dt class="sig sig-object py" id="fateslist.utils.extract_time">
+<span class="sig-prename descclassname"><span class="pre">fateslist.utils.</span></span><span class="sig-name descname"><span class="pre">extract_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">td</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fateslist.utils.extract_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extracts time from a timedelta object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -425,7 +385,7 @@ This will be a aiohttp ClientResponse</p></li>
         </div>
 
         <div class="related-information">
-              Copyright &#169; Infinity Bot List. Made By Rootspring |
+              Copyright &#169; Fates List. Made By Rootspring |
           Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
           <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
             | <a class="muted-link" href="_sources/BaseClasses.rst.txt"

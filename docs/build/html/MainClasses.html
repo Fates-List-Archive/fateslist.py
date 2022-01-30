@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Base Classes" href="BaseClasses.html" /><link rel="prev" title="Getting Started" href="GetStarted.html" />
 
     <meta name="generator" content="sphinx-4.2.0, furo 2021.11.23"/>
-        <title>Main Classes - IBLPy 2.0.8 documentation</title>
+        <title>Main Classes - fateslist.py 1.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">IBLPy 2.0.8 documentation</div></a>
+      <a href="index.html"><div class="brand">fateslist.py 1.0.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -146,7 +146,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">IBLPy 2.0.8 documentation</span>
+  <span class="sidebar-brand-text">fateslist.py 1.0.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -184,70 +184,76 @@
           </label>
         </div>
         <article role="main">
-          <section id="module-IBLPy">
-<span id="main-classes"></span><h1>Main Classes<a class="headerlink" href="#module-IBLPy" title="Permalink to this headline">¶</a></h1>
+          <section id="module-fateslist">
+<span id="main-classes"></span><h1>Main Classes<a class="headerlink" href="#module-fateslist" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
-<dt class="sig sig-object py" id="IBLPy.BotClient">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">IBLPy.</span></span><span class="sig-name descname"><span class="pre">BotClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_token</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#IBLPy.BotClient" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="fateslist.BotClient">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">fateslist.</span></span><span class="sig-name descname"><span class="pre">BotClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_token</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fateslist.BotClient" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Initialize a Infinity Bots List (IBL) Bot Client. You can use this to get/post bot stats and fetch a bot!</p>
+<p>Initialize a Fates List Bot Client. You can use this to get/post bot stats, fetch a bot etc. etc.!</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>bot_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – The Bot ID you wish to use with the IBL API</p></li>
-<li><p><strong>api_token</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]) – The API Token of the bot. You can find this by clicking API Token under the “Owner Section”. 
+<li><p><strong>bot_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – The Bot ID you wish to use with the Fates List API</p></li>
+<li><p><strong>api_token</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]) – The API Token of the bot. You can find this by clicking API Token under the “About Section”. 
 This is optional however you will not be able to post stats if you do not pass a API Token</p></li>
 </ul>
 </dd>
 </dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="IBLPy.BotClient.get_bot">
-<em class="property"><span class="pre">async</span> </em><span class="sig-name descname"><span class="pre">get_bot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#IBLPy.BotClient.get_bot" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="fateslist.BotClient.get_bot">
+<em class="property"><span class="pre">async</span> </em><span class="sig-name descname"><span class="pre">get_bot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fateslist.BotClient.get_bot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Asynchronously get a bot. This does not take any parameters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>If the bot was not found or if IBLPy could not parse the JSON request for any reason</p>
+<dd class="field-odd"><p>If the bot was not found or if fateslist.py could not parse the JSON request for any reason</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p>None</p>
 </dd>
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>This will be returned if you are ratelimited</p>
+<dd class="field-odd"><p>This will be returned on an error</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="BaseClasses.html#IBLPy.classes.IBLAPIResponse" title="IBLPy.classes.IBLAPIResponse">IBLAPIResponse</a></p>
+<dd class="field-even"><p><a class="reference internal" href="BaseClasses.html#fateslist.classes.APIResponse" title="fateslist.classes.APIResponse">APIResponse</a></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>This will be returned on an error</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="BaseClasses.html#fateslist.classes.APIRatelimit" title="fateslist.classes.APIRatelimit">APIRatelimit</a></p>
 </dd>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>This is the bot object returned from the API</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="BaseClasses.html#IBLPy.classes.IBLBot" title="IBLPy.classes.IBLBot">IBLBot</a></p>
+<dd class="field-even"><p><a class="reference internal" href="BaseClasses.html#fateslist.classes.Bot" title="fateslist.classes.Bot">Bot</a></p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="IBLPy.BotClient.has_user_voted">
-<em class="property"><span class="pre">async</span> </em><span class="sig-name descname"><span class="pre">has_user_voted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#IBLPy.BotClient.has_user_voted" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="fateslist.BotClient.get_user_votes">
+<em class="property"><span class="pre">async</span> </em><span class="sig-name descname"><span class="pre">get_user_votes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fateslist.BotClient.get_user_votes" title="Permalink to this definition">¶</a></dt>
 <dd><p>This returns whether or not a user has voted</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>This will be returned if you are ratelimited</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="BaseClasses.html#IBLPy.classes.IBLAPIResponse" title="IBLPy.classes.IBLAPIResponse">IBLAPIResponse</a></p>
+<dd class="field-even"><p><a class="reference internal" href="BaseClasses.html#fateslist.classes.APIResponse" title="fateslist.classes.APIResponse">APIResponse</a></p>
 </dd>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Whether or not the user has voted or not</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p>bool</p>
+<dd class="field-even"><p>UserVotes</p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="IBLPy.BotClient.set_stats">
-<em class="property"><span class="pre">async</span> </em><span class="sig-name descname"><span class="pre">set_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">guild_count</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shard_count</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#IBLPy.BotClient.set_stats" title="Permalink to this definition">¶</a></dt>
-<dd><p>Posts bot stats to the IBL API asynchronously</p>
+<dt class="sig sig-object py" id="fateslist.BotClient.set_stats">
+<em class="property"><span class="pre">async</span> </em><span class="sig-name descname"><span class="pre">set_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">guild_count</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shard_count</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fateslist.BotClient.set_stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Posts bot stats to the Fates List API. This is optional but it is recommended to post stats to the API.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -259,28 +265,28 @@ This is optional however you will not be able to post stats if you do not pass a
 <dd class="field-even"><p>This will always be returned unless something goes wrong, in which case you will get an exception</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="BaseClasses.html#IBLPy.classes.IBLAPIResponse" title="IBLPy.classes.IBLAPIResponse">IBLAPIResponse</a></p>
+<dd class="field-odd"><p><a class="reference internal" href="BaseClasses.html#fateslist.classes.APIResponse" title="fateslist.classes.APIResponse">APIResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
 </dd></dl>
 <dl class="py class">
-<dt class="sig sig-object py" id="IBLPy.UserClient">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">IBLPy.</span></span><span class="sig-name descname"><span class="pre">UserClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#IBLPy.UserClient" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="fateslist.UserClient">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">fateslist.</span></span><span class="sig-name descname"><span class="pre">UserClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fateslist.UserClient" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Initialize a Infinity Bots List (IBL) User Client. You can use this to get user stats!</p>
+<p>Initialize a fateslist.py User Client. You can use this to get user stats!</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>user_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – The User ID you wish to use with the IBL API</p>
+<dd class="field-odd"><p><strong>user_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – The User ID you wish to use with the Fates List API</p>
 </dd>
 </dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="IBLPy.UserClient.get_user">
-<em class="property"><span class="pre">async</span> </em><span class="sig-name descname"><span class="pre">get_user</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#IBLPy.UserClient.get_user" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="fateslist.UserClient.get_user">
+<em class="property"><span class="pre">async</span> </em><span class="sig-name descname"><span class="pre">get_user</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fateslist.UserClient.get_user" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a user. This does not take any parameters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>If the user was not found or if IBLPy could not parse the JSON request for any reason</p>
+<dd class="field-odd"><p>If the user was not found or if fateslist could not parse the JSON request for any reason</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p>None</p>
@@ -289,23 +295,23 @@ This is optional however you will not be able to post stats if you do not pass a
 <dd class="field-odd"><p>This will be returned if you are ratelimited</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="BaseClasses.html#IBLPy.classes.IBLAPIResponse" title="IBLPy.classes.IBLAPIResponse">IBLAPIResponse</a></p>
+<dd class="field-even"><p><a class="reference internal" href="BaseClasses.html#fateslist.classes.APIResponse" title="fateslist.classes.APIResponse">APIResponse</a></p>
 </dd>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>This is the user object returned from the API</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="BaseClasses.html#IBLPy.classes.IBLUser" title="IBLPy.classes.IBLUser">IBLUser</a></p>
+<dd class="field-even"><p><a class="reference internal" href="BaseClasses.html#fateslist.classes.User" title="fateslist.classes.User">User</a></p>
 </dd>
 </dl>
 </dd></dl>
 </dd></dl>
 <dl class="py class">
-<dt class="sig sig-object py" id="IBLPy.AutoPoster">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">IBLPy.</span></span><span class="sig-name descname"><span class="pre">AutoPoster</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">interval</span></em>, <em class="sig-param"><span class="pre">botcli</span></em>, <em class="sig-param"><span class="pre">discli</span></em>, <em class="sig-param"><span class="pre">sharding=None</span></em>, <em class="sig-param"><span class="pre">on_post=None</span></em>, <em class="sig-param"><span class="pre">get_counts=&lt;function</span> <span class="pre">_default_get_counts&gt;</span></em><span class="sig-paren">)</span><a class="headerlink" href="#IBLPy.AutoPoster" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="fateslist.AutoPoster">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">fateslist.</span></span><span class="sig-name descname"><span class="pre">AutoPoster</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">interval</span></em>, <em class="sig-param"><span class="pre">botcli</span></em>, <em class="sig-param"><span class="pre">discli</span></em>, <em class="sig-param"><span class="pre">sharding=None</span></em>, <em class="sig-param"><span class="pre">on_post=None</span></em>, <em class="sig-param"><span class="pre">get_counts=&lt;function</span> <span class="pre">_default_get_counts&gt;</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fateslist.AutoPoster" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="simple">
-<dt>This is IBL Auto Poster. It will post stats for you on an interval you decide</dt><dd><p>and it will then run a function of your choice (if requested) after posting each time.</p>
+<dt>This is Fates List Auto Poster. It will post stats for you on an interval you decide</dt><dd><p>and it will then run a function of your choice (if requested) after posting each time.</p>
 </dd>
 </dl>
 <p>You can stop a Auto Poster by calling the <code class="docutils literal notranslate"><span class="pre">stop</span></code> function.</p>
@@ -317,41 +323,41 @@ returns the dict {“guild_count: guild count, “shard_count”: shard_count} f
 A default value for this is provided for ease of use</p></li>
 <li><p><strong>interval</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – How long to wait each time you post. It is required to use at least 5 minutes which is 300 seconds.
 Specifying a value below 300 seconds will set the interval to 300 seconds anyways</p></li>
-<li><p><strong>botcli</strong> (<a class="reference internal" href="#IBLPy.BotClient" title="IBLPy.main.BotClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">BotClient</span></code></a>) – The IBL BotClient of the bot you want to post stats for. 
+<li><p><strong>botcli</strong> (<a class="reference internal" href="#fateslist.BotClient" title="fateslist.main.BotClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">BotClient</span></code></a>) – The fateslist.py BotClient of the bot you want to post stats for. 
 It must have the API token set either during initialization or afterwards by setting the api_token parameter</p></li>
 <li><p><strong>discli</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Client</span></code>) – The discord.Client (or like interfaces like discord.Bot/discord.AutoShardedBot) of the bot you want to post stats for.
 If you wish to add shard counts, please give a discord.AutoShardedClient and pass sharding = True or use get_counts</p></li>
 <li><p><strong>on_post</strong> – The function to call after posting. Set to None if you don’t want this.
 This function needs to accept three arguments, the guild count sent, the shard count set 
-and the response (which will either be a IBLAPIResponse, a IBLAPIRatelimit or None). 
+and the response (which will either be a APIResponse, a APIRatelimit or None). 
 Shard count will be None if sharding is disabled and/or get_count provided doesn’t support it</p></li>
 <li><p><strong>sharding</strong> – Whether we should post sharding as well. Requires a discord.AutoShardedClient</p></li>
 </ul>
 </dd>
 </dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="IBLPy.AutoPoster.autoposter">
-<em class="property"><span class="pre">async</span> </em><span class="sig-name descname"><span class="pre">autoposter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#IBLPy.AutoPoster.autoposter" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="fateslist.AutoPoster.autoposter">
+<em class="property"><span class="pre">async</span> </em><span class="sig-name descname"><span class="pre">autoposter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fateslist.AutoPoster.autoposter" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is the autoposting function that is run by the <code class="docutils literal notranslate"><span class="pre">start</span></code> function here (using asyncio.create_task)</p>
 </dd></dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="IBLPy.AutoPoster.start">
-<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#IBLPy.AutoPoster.start" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="fateslist.AutoPoster.start">
+<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fateslist.AutoPoster.start" title="Permalink to this definition">¶</a></dt>
 <dd><p>Starts the auto poster using asyncio.create_task and returns the created task. This must be done in the on_ready function in discord.py</p>
 </dd></dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="IBLPy.AutoPoster.stop">
-<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#IBLPy.AutoPoster.stop" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="fateslist.AutoPoster.stop">
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fateslist.AutoPoster.stop" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stops the auto poster by setting the <code class="docutils literal notranslate"><span class="pre">keep_running</span></code> attribute to False. Since the exact name may change, it is recommended to use <code class="docutils literal notranslate"><span class="pre">stop</span></code> instead of manually setting the attribute.</p>
 <p>The autoposter will only stopped after the interval specified</p>
 <p>This will return the autoposter asyncio task</p>
 </dd></dl>
 </dd></dl>
 <dl class="py class">
-<dt class="sig sig-object py" id="IBLPy.Webhook">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">IBLPy.</span></span><span class="sig-name descname"><span class="pre">Webhook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">botcli</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coro</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">secret</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#IBLPy.Webhook" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="fateslist.Webhook">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">fateslist.</span></span><span class="sig-name descname"><span class="pre">Webhook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">botcli</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coro</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">secret</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fateslist.Webhook" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>This is an IBLPy webhook. It takes a BotClient, your webhook secret and the awaitable/asyncio corouting to call after getting a vote. To start your webhook:</p>
+<p>This is an fateslist.py webhook. It takes a BotClient, your webhook secret and the awaitable/asyncio corouting to call after getting a vote. To start your webhook:</p>
 <blockquote>
 <div><p>Use start_ws_task if you are running this in discord.py. make sure you start the webhook in your on_ready event (at the very end of it since it’s blocking)</p>
 <p>Use start_ws_normal if you are running this seperately from discord.py. It will be run using asyncio.run instead of asyncio.create_task</p>
@@ -359,23 +365,23 @@ Shard count will be None if sharding is disabled and/or get_count provided doesn
 <p>Use create_app if you want to get the FastAPI ASGI app and deploy the webhook using your own server. Uvicorn still needs to be installed even if you use a different ASGI server</p>
 </div></blockquote>
 <dl class="py method">
-<dt class="sig sig-object py" id="IBLPy.Webhook.create_app">
-<span class="sig-name descname"><span class="pre">create_app</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">route</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#IBLPy.Webhook.create_app" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="fateslist.Webhook.create_app">
+<span class="sig-name descname"><span class="pre">create_app</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">route</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fateslist.Webhook.create_app" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a FastAPI ASGI app and returns it so you can deploy it how you want to deploy it</p>
 </dd></dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="IBLPy.Webhook.start_ws">
-<em class="property"><span class="pre">async</span> </em><span class="sig-name descname"><span class="pre">start_ws</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">route</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8012</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#IBLPy.Webhook.start_ws" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="fateslist.Webhook.start_ws">
+<em class="property"><span class="pre">async</span> </em><span class="sig-name descname"><span class="pre">start_ws</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">route</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8012</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fateslist.Webhook.start_ws" title="Permalink to this definition">¶</a></dt>
 <dd><p>Coroutine to start webhook using any asyncio method you want.</p>
 </dd></dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="IBLPy.Webhook.start_ws_normal">
-<span class="sig-name descname"><span class="pre">start_ws_normal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">route</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8012</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#IBLPy.Webhook.start_ws_normal" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="fateslist.Webhook.start_ws_normal">
+<span class="sig-name descname"><span class="pre">start_ws_normal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">route</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8012</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fateslist.Webhook.start_ws_normal" title="Permalink to this definition">¶</a></dt>
 <dd><p>Start webhook using asyncio.run for normal non-discord.py usecases</p>
 </dd></dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="IBLPy.Webhook.start_ws_task">
-<span class="sig-name descname"><span class="pre">start_ws_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">route</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8012</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#IBLPy.Webhook.start_ws_task" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="fateslist.Webhook.start_ws_task">
+<span class="sig-name descname"><span class="pre">start_ws_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">route</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8012</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fateslist.Webhook.start_ws_task" title="Permalink to this definition">¶</a></dt>
 <dd><p>Start webhook using asyncio.create_task (discord.py). Use this in a discord.py on_ready event (at the very end of it since it’s blocking).</p>
 </dd></dl>
 </dd></dl>
@@ -409,7 +415,7 @@ Shard count will be None if sharding is disabled and/or get_count provided doesn
         </div>
 
         <div class="related-information">
-              Copyright &#169; Infinity Bot List. Made By Rootspring |
+              Copyright &#169; Fates List. Made By Rootspring |
           Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
           <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
             | <a class="muted-link" href="_sources/MainClasses.rst.txt"

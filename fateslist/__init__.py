@@ -18,5 +18,6 @@ import discord
 from fateslist.main import *
 from fateslist.config import *
 from fateslist.ws import *
+from fateslist.utils import *
 
 __version__ = version

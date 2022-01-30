@@ -1,17 +1,17 @@
 Getting Started
 ===============
 
-Using IBLPy is easy. Here, we will assume you are just using this to post stats using our autoposter and a webhook. The first thing you will need to do is create a Bot Client. A Bot Client is the base of all bot operations on IBLPy (there is also a User Client as the base of all user operations on IBLPy). 
+Using fateslist.py is easy. Here, we will assume you are just using this to post stats using our autoposter and a webhook. The first thing you will need to do is create a Bot Client. A Bot Client is the base of all bot operations on fateslist.py (there is also a User Client as the base of all user operations on fateslist.py). 
 
 You can create a Bot Client like this::
 
-   ibl = IBLPy.BotClient(bot_id = bot_id, api_token = api_token_here)
+   ibl = fateslist.BotClient(bot_id = bot_id, api_token = api_token_here)
 
 Replace bot_id and api_token_here with your bots ID and the api token (you don't have to give your api token and you can remove this parameter altogether if you just need to get the bot, but for autoposting and stat posting, you need to provide an API Token)
 
 Next setup discord.py normally (with a ``on_ready`` event). You will get something like this (the exact discord.py Client you use may be different)::
 
-   ibl = IBLPy.BotClient(bot_id = bot_id, api_token = api_token_here)
+   ibl = fateslist.BotClient(bot_id = bot_id, api_token = api_token_here)
    client = discord.Client()
 
    @client.event
@@ -27,7 +27,7 @@ The ``on_ready`` event is where we will do our autoposting and webhooks. If you 
 
 In most cases, you will want to use autoposting to do this, but you `can` do it manually like below::
 
-   ibl = IBLPy.BotClient(bot_id = bot_id, api_token = api_token_here)
+   ibl = fateslist.BotClient(bot_id = bot_id, api_token = api_token_here)
 
    res = await ibl.set_stats(guild_count = guild_count_here, shard_count = shard_count_here) # Asynchronous, needs to be in an async function
    
@@ -40,7 +40,7 @@ In most cases, you will want to use autoposting to do this, but you `can` do it 
 
 In order to setup autoposting, we need to create an AutoPoster inside our ``on_ready`` function. To do so, add something like the below code snippet to your ``on_ready`` function::
 
-   ap = IBLPy.AutoPoster(interval = 300, botcli = ibl, discli = client, on_post = None, sharding = False)
+   ap = fateslist.AutoPoster(interval = 300, botcli = ibl, discli = client, on_post = None, sharding = False)
    ap.start() # Starts the autoposter in the background
 
 If you run this right now, you will see that it does post stats every 5 minutes and also logs it. Log configuration ia upcoming and will use logging. You can use ``ap.stop()`` to stop an AutoPoster. The interval must be in seconds and if it is below the 5 minutes or 300 seconds above, it will automatically be set to 5 minutes. This is to prevent ratelimits, which are strict on IBL
@@ -49,10 +49,10 @@ If you run this right now, you will see that it does post stats every 5 minutes 
 
 Since webhooks are blocking, you must put it at the end of your ``on_ready`` function or nothing below it in ``on_ready`` will be executed. To setup webhooks, add something like the below code snippet to your ``on_ready`` function::
 
-   wh = IBLPy.Webhook(botcli = ibl, secret = "YOUR WEBHOOK SECRET", coro = get_vote)
+   wh = fateslist.Webhook(botcli = ibl, secret = "YOUR WEBHOOK SECRET", coro = get_vote)
    wh.start_ws_task(route = "/ibl/webhook", port = 8016)
 
-The webhook secret is the one you configured in IBL, use None if you don't want to use one (not recommended as this allows anyone to POST to your webhook freely including non-IBL users). IBLPy will check the webhook secret sent against what is givenand will return a 401 status code (and not call your vote function) is the secret is invalid thus allowing only IBL to POST to your webhook. 
+The webhook secret is the one you configured in IBL, use None if you don't want to use one (not recommended as this allows anyone to POST to your webhook freely including non-IBL users). fateslist will check the webhook secret sent against what is givenand will return a 401 status code (and not call your vote function) is the secret is invalid thus allowing only IBL to POST to your webhook. 
 
 The route parameter below is what route to use for your webhook, coro is the async coroutine to run when you get a vote and must be awaitable and must accept a vote parameter containing the vote and a secret parameter (which will be sent for extra verification)
 
@@ -62,9 +62,9 @@ If you run this now, you will have discord.py, autoposting and webhooks working 
 
 **Getting A Bot**
 
-IBLPy makes it easy to get a bot from the API and parses it for you in a easy to use format of :class:`~IBLPy.base_fn.IBLBot`. To use this, create a Bot Client of the bot you want to get (with or without the API token). Then call ``get_bot`` like below::
+fateslist makes it easy to get a bot from the API and parses it for you in a easy to use format of :class:`~fateslist.classes.Bot`. To use this, create a Bot Client of the bot you want to get (with or without the API token). Then call ``get_bot`` like below::
 
-   ibl = IBLPy.BotClient(bot_id = bot_id, api_token = api_token_here)
+   ibl = fateslist.BotClient(bot_id = bot_id, api_token = api_token_here)
    
    bot = await ibl.get_bot() # Asynchronous, needs to be in an async function
 

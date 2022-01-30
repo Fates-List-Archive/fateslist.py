@@ -1,30 +1,30 @@
 Base Classes
 ============
 
-.. module:: IBLPy.classes
+.. module:: fateslist.classes
 
-.. autoclass:: IBLBaseUser
+.. autoclass:: BaseUser
    :inherited-members:
    :members:
    :special-members:
    :show-inheritance:
    :exclude-members: __init__,__weakref__
 
-.. autoclass:: IBLBot
+.. autoclass:: Bot
    :inherited-members:
    :show-inheritance:
    :members:
    :special-members:
    :exclude-members: __init__,__weakref__
 
-.. autoclass:: IBLUser
+.. autoclass:: User
    :inherited-members:
    :show-inheritance:
    :members:
    :special-members:
    :exclude-members: __init__,__weakref__
 
-.. autoclass:: IBLAPIResponse
+.. autoclass:: APIResponse
    :inherited-members:
    :show-inheritance:
    :members:
@@ -37,16 +37,21 @@ Base Classes
    :show-inheritance:
    :members:
 
-.. autoclass:: IBLAPIRatelimit
+.. autoclass:: APIRatelimit
    :show-inheritance:
    :members:
 
 **Votes**
 
-.. module:: IBLPy.ws
+.. module:: fateslist.ws
 
 .. autoclass:: Vote
    :show-inheritance:
    :members:
    :exclude-members: __init__,__weakref__
 
+**Utilities**
+
+.. module:: fateslist.utils
+
+.. autofunction:: extract_time

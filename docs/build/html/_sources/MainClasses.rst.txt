@@ -1,7 +1,7 @@
 Main Classes
 ============
 
-.. module:: IBLPy
+.. module:: fateslist
 
 .. autoclass:: BotClient
    :inherited-members:

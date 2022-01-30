@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Main Classes" href="MainClasses.html" /><link rel="prev" title="IBLPy Documentation" href="index.html" />
 
     <meta name="generator" content="sphinx-4.2.0, furo 2021.11.23"/>
-        <title>Getting Started - IBLPy 2.0.8 documentation</title>
+        <title>Getting Started - fateslist.py 1.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">IBLPy 2.0.8 documentation</div></a>
+      <a href="index.html"><div class="brand">fateslist.py 1.0.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -146,7 +146,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">IBLPy 2.0.8 documentation</span>
+  <span class="sidebar-brand-text">fateslist.py 1.0.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -186,14 +186,14 @@
         <article role="main">
           <section id="getting-started">
 <h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
-<p>Using IBLPy is easy. Here, we will assume you are just using this to post stats using our autoposter and a webhook. The first thing you will need to do is create a Bot Client. A Bot Client is the base of all bot operations on IBLPy (there is also a User Client as the base of all user operations on IBLPy).</p>
+<p>Using fateslist.py is easy. Here, we will assume you are just using this to post stats using our autoposter and a webhook. The first thing you will need to do is create a Bot Client. A Bot Client is the base of all bot operations on fateslist.py (there is also a User Client as the base of all user operations on fateslist.py).</p>
 <p>You can create a Bot Client like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ibl</span> <span class="o">=</span> <span class="n">IBLPy</span><span class="o">.</span><span class="n">BotClient</span><span class="p">(</span><span class="n">bot_id</span> <span class="o">=</span> <span class="n">bot_id</span><span class="p">,</span> <span class="n">api_token</span> <span class="o">=</span> <span class="n">api_token_here</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ibl</span> <span class="o">=</span> <span class="n">fateslist</span><span class="o">.</span><span class="n">BotClient</span><span class="p">(</span><span class="n">bot_id</span> <span class="o">=</span> <span class="n">bot_id</span><span class="p">,</span> <span class="n">api_token</span> <span class="o">=</span> <span class="n">api_token_here</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Replace bot_id and api_token_here with your bots ID and the api token (you don’t have to give your api token and you can remove this parameter altogether if you just need to get the bot, but for autoposting and stat posting, you need to provide an API Token)</p>
 <p>Next setup discord.py normally (with a <code class="docutils literal notranslate"><span class="pre">on_ready</span></code> event). You will get something like this (the exact discord.py Client you use may be different):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ibl</span> <span class="o">=</span> <span class="n">IBLPy</span><span class="o">.</span><span class="n">BotClient</span><span class="p">(</span><span class="n">bot_id</span> <span class="o">=</span> <span class="n">bot_id</span><span class="p">,</span> <span class="n">api_token</span> <span class="o">=</span> <span class="n">api_token_here</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ibl</span> <span class="o">=</span> <span class="n">fateslist</span><span class="o">.</span><span class="n">BotClient</span><span class="p">(</span><span class="n">bot_id</span> <span class="o">=</span> <span class="n">bot_id</span><span class="p">,</span> <span class="n">api_token</span> <span class="o">=</span> <span class="n">api_token_here</span><span class="p">)</span>
 <span class="n">client</span> <span class="o">=</span> <span class="n">discord</span><span class="o">.</span><span class="n">Client</span><span class="p">()</span>
 
 <span class="nd">@client</span><span class="o">.</span><span class="n">event</span>
@@ -207,7 +207,7 @@
 <p>The <code class="docutils literal notranslate"><span class="pre">on_ready</span></code> event is where we will do our autoposting and webhooks. If you are not using discord.py, please check the Documentation for which functions you have to use.)</p>
 <p><strong>Posting Stats Manually</strong></p>
 <p>In most cases, you will want to use autoposting to do this, but you <cite>can</cite> do it manually like below:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ibl</span> <span class="o">=</span> <span class="n">IBLPy</span><span class="o">.</span><span class="n">BotClient</span><span class="p">(</span><span class="n">bot_id</span> <span class="o">=</span> <span class="n">bot_id</span><span class="p">,</span> <span class="n">api_token</span> <span class="o">=</span> <span class="n">api_token_here</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ibl</span> <span class="o">=</span> <span class="n">fateslist</span><span class="o">.</span><span class="n">BotClient</span><span class="p">(</span><span class="n">bot_id</span> <span class="o">=</span> <span class="n">bot_id</span><span class="p">,</span> <span class="n">api_token</span> <span class="o">=</span> <span class="n">api_token_here</span><span class="p">)</span>
 
 <span class="n">res</span> <span class="o">=</span> <span class="k">await</span> <span class="n">ibl</span><span class="o">.</span><span class="n">set_stats</span><span class="p">(</span><span class="n">guild_count</span> <span class="o">=</span> <span class="n">guild_count_here</span><span class="p">,</span> <span class="n">shard_count</span> <span class="o">=</span> <span class="n">shard_count_here</span><span class="p">)</span> <span class="c1"># Asynchronous, needs to be in an async function</span>
 
@@ -219,24 +219,24 @@
 </div>
 <p><strong>Autoposting</strong></p>
 <p>In order to setup autoposting, we need to create an AutoPoster inside our <code class="docutils literal notranslate"><span class="pre">on_ready</span></code> function. To do so, add something like the below code snippet to your <code class="docutils literal notranslate"><span class="pre">on_ready</span></code> function:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ap</span> <span class="o">=</span> <span class="n">IBLPy</span><span class="o">.</span><span class="n">AutoPoster</span><span class="p">(</span><span class="n">interval</span> <span class="o">=</span> <span class="mi">300</span><span class="p">,</span> <span class="n">botcli</span> <span class="o">=</span> <span class="n">ibl</span><span class="p">,</span> <span class="n">discli</span> <span class="o">=</span> <span class="n">client</span><span class="p">,</span> <span class="n">on_post</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">sharding</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ap</span> <span class="o">=</span> <span class="n">fateslist</span><span class="o">.</span><span class="n">AutoPoster</span><span class="p">(</span><span class="n">interval</span> <span class="o">=</span> <span class="mi">300</span><span class="p">,</span> <span class="n">botcli</span> <span class="o">=</span> <span class="n">ibl</span><span class="p">,</span> <span class="n">discli</span> <span class="o">=</span> <span class="n">client</span><span class="p">,</span> <span class="n">on_post</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">sharding</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
 <span class="n">ap</span><span class="o">.</span><span class="n">start</span><span class="p">()</span> <span class="c1"># Starts the autoposter in the background</span>
 </pre></div>
 </div>
 <p>If you run this right now, you will see that it does post stats every 5 minutes and also logs it. Log configuration ia upcoming and will use logging. You can use <code class="docutils literal notranslate"><span class="pre">ap.stop()</span></code> to stop an AutoPoster. The interval must be in seconds and if it is below the 5 minutes or 300 seconds above, it will automatically be set to 5 minutes. This is to prevent ratelimits, which are strict on IBL</p>
 <p><strong>Webhooks</strong></p>
 <p>Since webhooks are blocking, you must put it at the end of your <code class="docutils literal notranslate"><span class="pre">on_ready</span></code> function or nothing below it in <code class="docutils literal notranslate"><span class="pre">on_ready</span></code> will be executed. To setup webhooks, add something like the below code snippet to your <code class="docutils literal notranslate"><span class="pre">on_ready</span></code> function:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wh</span> <span class="o">=</span> <span class="n">IBLPy</span><span class="o">.</span><span class="n">Webhook</span><span class="p">(</span><span class="n">botcli</span> <span class="o">=</span> <span class="n">ibl</span><span class="p">,</span> <span class="n">secret</span> <span class="o">=</span> <span class="s2">"YOUR WEBHOOK SECRET"</span><span class="p">,</span> <span class="n">coro</span> <span class="o">=</span> <span class="n">get_vote</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wh</span> <span class="o">=</span> <span class="n">fateslist</span><span class="o">.</span><span class="n">Webhook</span><span class="p">(</span><span class="n">botcli</span> <span class="o">=</span> <span class="n">ibl</span><span class="p">,</span> <span class="n">secret</span> <span class="o">=</span> <span class="s2">"YOUR WEBHOOK SECRET"</span><span class="p">,</span> <span class="n">coro</span> <span class="o">=</span> <span class="n">get_vote</span><span class="p">)</span>
 <span class="n">wh</span><span class="o">.</span><span class="n">start_ws_task</span><span class="p">(</span><span class="n">route</span> <span class="o">=</span> <span class="s2">"/ibl/webhook"</span><span class="p">,</span> <span class="n">port</span> <span class="o">=</span> <span class="mi">8016</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The webhook secret is the one you configured in IBL, use None if you don’t want to use one (not recommended as this allows anyone to POST to your webhook freely including non-IBL users). IBLPy will check the webhook secret sent against what is givenand will return a 401 status code (and not call your vote function) is the secret is invalid thus allowing only IBL to POST to your webhook.</p>
+<p>The webhook secret is the one you configured in IBL, use None if you don’t want to use one (not recommended as this allows anyone to POST to your webhook freely including non-IBL users). fateslist will check the webhook secret sent against what is givenand will return a 401 status code (and not call your vote function) is the secret is invalid thus allowing only IBL to POST to your webhook.</p>
 <p>The route parameter below is what route to use for your webhook, coro is the async coroutine to run when you get a vote and must be awaitable and must accept a vote parameter containing the vote and a secret parameter (which will be sent for extra verification)</p>
 <p>The port parameter is the port the webhook should listen at (the below webhook is running at <a class="reference external" href="http://0.0.0.0:8016/ibl/webhook">http://0.0.0.0:8016/ibl/webhook</a>). You can now tunnel/reverse proxy this and add your webhook to IBL.</p>
 <p>If you run this now, you will have discord.py, autoposting and webhooks working simultaneously! You’re done!</p>
 <p><strong>Getting A Bot</strong></p>
-<p>IBLPy makes it easy to get a bot from the API and parses it for you in a easy to use format of <code class="xref py py-class docutils literal notranslate"><span class="pre">IBLBot</span></code>. To use this, create a Bot Client of the bot you want to get (with or without the API token). Then call <code class="docutils literal notranslate"><span class="pre">get_bot</span></code> like below:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ibl</span> <span class="o">=</span> <span class="n">IBLPy</span><span class="o">.</span><span class="n">BotClient</span><span class="p">(</span><span class="n">bot_id</span> <span class="o">=</span> <span class="n">bot_id</span><span class="p">,</span> <span class="n">api_token</span> <span class="o">=</span> <span class="n">api_token_here</span><span class="p">)</span>
+<p>fateslist makes it easy to get a bot from the API and parses it for you in a easy to use format of <a class="reference internal" href="BaseClasses.html#fateslist.classes.Bot" title="fateslist.classes.Bot"><code class="xref py py-class docutils literal notranslate"><span class="pre">Bot</span></code></a>. To use this, create a Bot Client of the bot you want to get (with or without the API token). Then call <code class="docutils literal notranslate"><span class="pre">get_bot</span></code> like below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ibl</span> <span class="o">=</span> <span class="n">fateslist</span><span class="o">.</span><span class="n">BotClient</span><span class="p">(</span><span class="n">bot_id</span> <span class="o">=</span> <span class="n">bot_id</span><span class="p">,</span> <span class="n">api_token</span> <span class="o">=</span> <span class="n">api_token_here</span><span class="p">)</span>
 
 <span class="n">bot</span> <span class="o">=</span> <span class="k">await</span> <span class="n">ibl</span><span class="o">.</span><span class="n">get_bot</span><span class="p">()</span> <span class="c1"># Asynchronous, needs to be in an async function</span>
 
@@ -273,7 +273,7 @@
         </div>
 
         <div class="related-information">
-              Copyright &#169; Infinity Bot List. Made By Rootspring |
+              Copyright &#169; Fates List. Made By Rootspring |
           Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
           <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
             | <a class="muted-link" href="_sources/GetStarted.rst.txt"
