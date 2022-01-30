@@ -22,6 +22,8 @@ def etrace(ex):
     Get the traceback of an exception
 
     Used internally by fateslist.py and our own tooling
+
+    **Requires python 3.10+**
     """
     try:
         return "".join(traceback.format_exception(ex)) # COMPAT: Python 3.10 only
