@@ -14,9 +14,9 @@ Classifier: Operating System :: OS Independent
 Description-Content-Type: text/markdown
 License-File: LICENSE
 
-# IBLPy
+# fateslist.py
 
-IBLPy is a API wrapper/library around [Infinity Bot List](https://infinitybotlist.com), which is a great novel bot list for the next generation of bots owned by ``☣ Tσxιƈ Dҽʋ ☣#7308``. See [here](https://iblpy.botlist.app) for docs
+fateslist.py is a API wrapper/library around [Fates List](https://fateslist.xyz), which is a great novel bot list featuring over hundreds of bots for our users owned by ``Rootspring#6701``. See [here](https://py.fateslist.xyz) for docs
 
 ## Issues And Contributing
 

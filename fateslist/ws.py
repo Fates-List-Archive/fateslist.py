@@ -1,3 +1,4 @@
+import uuid
 from fastapi import APIRouter, Header, Request
 from starlette.exceptions import HTTPException as StarletteHTTPException
 from pydantic import BaseModel
@@ -18,17 +19,27 @@ def secure_strcmp(val1, val2):
     return secrets.compare_digest(val1, val2)
 
 
-class VoteInternal(BaseModel):
+class VoteContext(BaseModel):
     """
-        Represents a internal IBL Vote. IBLPy will make this a Vote class
+        Represents a fateslist vote context. fateslist.py will make this a Vote class
     """
-    timeStamp: int
-    userID: str
-    userName: str
-    botID: str
-    type: str
-    count: Union[int, str] = 0
+    user: str
+    votes: int
+    test: Optional[bool] = False
 
+class Event(BaseModel):
+    """Represents a event on fateslist"""
+    e: int
+    eid: uuid.UUID
+    t: int
+    ts: float
+    user: str
+
+class VoteModel(BaseModel):
+    """The vote information itself"""
+    ctx: VoteContext
+    id: str
+    m: Event
 
 class Vote():
     """
@@ -62,20 +73,10 @@ async def debug_webhook(request: Request):
     print((await request.body()), secret)
 
 @router.post("/")
-async def iblpy_webhook(vote_internal: VoteInternal, Authorization: str = Header("INVALID_SECRET")):
+async def iblpy_webhook(vote: VoteModel, Authorization: str = Header("INVALID_SECRET")):
     if secret is None or secure_strcmp(secret, Authorization):
         pass
     else:
         return abort(401)
-    timestamp = int(vote_internal.timeStamp)
 
-    if vote_internal.type.lower() == "test":
-        bot_id = botcli.id
-        user_id = 0
-        test = True
-    else:
-        bot_id = int(vote_internal.botID)
-        user_id = int(vote_internal.userID)
-        test = False
-    vote = Vote(bot_id = bot_id, user_id = user_id, test = test, timestamp = timestamp, count = vote_internal.count, username = vote_internal.userName)
     return await wh_func(vote, secret)
