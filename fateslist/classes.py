@@ -1,6 +1,5 @@
 import fateslist.config as cfg
 from fateslist import api_modes, aiohttp
-from typing import Union, Optional
 from discord import Embed
 from .utils import extract_time
 import datetime
