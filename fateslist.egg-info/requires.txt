@@ -1,3 +1,4 @@
 aiohttp
 loguru
 discord
+aenum
