@@ -1,6 +1,7 @@
 import fateslist.config as cfg
+from fateslist.http import BaseHTTP
 import fateslist.http as _http
-from fateslist.classes import InvalidMode, APIResponse
+from fateslist.classes import InvalidMode, APIResponse, Bot, User, UserVotes
 from fateslist import api_modes, fastapi, uvicorn, ws, discord
 from loguru import logger
 from typing import Optional, Awaitable
@@ -8,7 +9,7 @@ import os
 import asyncio
 import time
 
-class BotClient():
+class BotClient(BaseHTTP):
     """
         Initialize a Fates List Bot Client. You can use this to get/post bot stats, fetch a bot etc. etc.!
             
@@ -20,10 +21,10 @@ class BotClient():
 
     def __init__(self, bot_id: int, api_token: Optional[str] = ""):
         self.bot_id = bot_id
-        self.http = _http.BotHTTP(bot_id)
+        self.id = bot_id
         
         if api_token:
-            self.http.login(api_token)
+            self.login(api_token)
 
             
     async def set_stats(self, guild_count: int, shard_count: Optional[int] = None) -> APIResponse:
@@ -37,8 +38,15 @@ class BotClient():
             :return: This will always be returned unless something goes wrong, in which case you will get an exception
             :rtype: APIResponse 
         """
-        return await self.http.set_stats(guild_count, shard_count)
-  
+        return await self.request(
+            method="POST",
+            endpoint=f"/bots/{self.id}/stats",
+            json={
+                "guild_count": guild_count,
+                "shard_count": shard_count if shard_count else "0" # IBL API workaroud
+            },
+            auth=True
+        )  
     
     async def get_bot(self, compact: bool = True):
         """
@@ -56,7 +64,15 @@ class BotClient():
             :return: This is the bot object returned from the API
             :rtype: Bot
         """
-        return await self.http.get_bot(compact=compact)
+        api_res = await self.request(
+            method="GET",
+            endpoint=f"/bots/{self.id}?compact={compact}",
+        )
+        
+        if not api_res.success:
+            return api_res
+        
+        return Bot(api_res.json)
 
     async def get_user_votes(self, user_id: int):
         """
@@ -68,9 +84,17 @@ class BotClient():
             :return: Whether or not the user has voted or not
             :rtype: UserVotes
         """
-        return await self.http.get_user_votes(user_id)
+        api_res = await self.request(
+            method="GET",
+            endpoint=f"/users/{user_id}/bots/{self.id}/votes",
+            auth=True
+        )
 
-class UserClient():
+        if not api_res.success:
+            return api_res
+        return UserVotes(api_res.json)
+
+class UserClient(BaseHTTP):
     """
         Initialize a fateslist.py User Client. You can use this to get user stats!
             
@@ -78,7 +102,7 @@ class UserClient():
     """
     def __init__(self, user_id: int):
         self.user_id = user_id
-        self.http = _http.UserHTTP(user_id)
+        self.id = user_id
 
     async def get_user(self):
         """
@@ -93,8 +117,15 @@ class UserClient():
             :return: This is the user object returned from the API
             :rtype: User
         """
-        return await self.http.get_user()
+        api_res = await self.request(
+            method="GET",
+            endpoint=f"/users/{self.id}", 
+        )
 
+        if not api_res.success:
+            return api_res
+    
+        return User(api_res.json)
 
 async def _default_get_counts(ap):
     """Returns guild and shard count for default autoposter"""

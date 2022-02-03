@@ -1,9 +1,11 @@
 import fateslist.config as cfg
 from fateslist import api_modes, aiohttp
+from pydantic import BaseModel
 from discord import Embed
 from .utils import extract_time
 import datetime
 from aenum import IntEnum
+from typing import Union, List, Dict
 
 class UserState(IntEnum):
     _init_ = 'value __doc__ __sitelock__'
@@ -138,6 +140,8 @@ class UserVotes(BaseObject):
     """
     ...
 
+# System
+
 class Stats(BaseObject):
     """
         Stats is internally a part of the classes module (which provides all of fateslist's base classes and functions). 
@@ -185,3 +189,41 @@ class Vanity(BaseObject):
         You should access parameters using object notation
     """
     ...
+
+class StatsFull(BaseObject):
+    """
+        StatsFull is internally a part of the classes module (which provides all of fateslist's base classes and functions). 
+        It represents full bot list stats on Fates List. The exact parameters of stats may change and fateslist is designed to handle such changes automatically. 
+
+        Please see https://api.fateslist.xyz/api/docs/redoc#operation/stats_page for a full list of parameters.
+
+        You should access parameters using object notation
+    """
+    ...
+
+# Staff Apps
+
+class StaffAppQuestion(BaseModel):
+    """
+    A question for a staff application.
+    """
+    id: str
+    title: str
+    question: str
+    answer: Union[str, None] = None
+    minlength: Union[int, None] = 30
+    maxlength: Union[int, None] = 2000
+
+class StaffAppCreate(BaseModel):
+    """
+    A request to create a new staff application.
+
+    Must be a dict of question id to the answer given
+    """
+    answers: Dict[str, str]
+
+class StaffAppQuestions(BaseModel):
+    """
+    A list of questions for a staff application.
+    """
+    questions: List[StaffAppQuestion]

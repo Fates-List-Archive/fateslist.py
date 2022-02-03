@@ -20,5 +20,6 @@ from fateslist.config import *
 from fateslist.ws import *
 from fateslist.utils import *
 from fateslist.system import *
+from fateslist.staffapps import *
 
 __version__ = version
