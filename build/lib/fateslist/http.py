@@ -74,10 +74,10 @@ class BotHTTP(BaseHTTP):
             auth=True
         )
    
-    async def get_bot(self):
+    async def get_bot(self, compact: bool):
         api_res = await self.request(
             method="GET",
-            endpoint=f"/bots/{self.id}",
+            endpoint=f"/bots/{self.id}?compact={compact}",
         )
         
         if not api_res.success:

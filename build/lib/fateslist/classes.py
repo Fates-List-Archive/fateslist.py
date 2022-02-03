@@ -13,6 +13,19 @@ class UserState(IntEnum):
     ddr_ban = 3, "Data Deletion Request Ban", True
     api_ban = 4, "Full API Ban", False
 
+class BotState(IntEnum):
+    _init_ = 'value __doc__'
+    approved = 0, "Verified"
+    pending = 1, "Pending Verification"
+    denied = 2, "Denied"
+    hidden = 3, "Hidden"
+    banned = 4, "Banned"
+    under_review = 5, "Under Review"
+    certified = 6, "Certified"
+    archived = 7, "Archived"
+    private_viewable = 8, "Private, but viewable with link (server only)"
+    private_staff_only = 9, "Private, only staff may join (server only)"
+
 class Status(IntEnum):
     """Status object (See https://docs.fateslist.xyz/basics/basic-structures#status for more information)"""
     _init_ = 'value __doc__'
@@ -21,6 +34,13 @@ class Status(IntEnum):
     offline = 2, "Offline"
     idle = 3, "Idle"
     dnd = 4, "Do Not Disturb"
+
+class LongDescType(IntEnum):
+    """Long description type"""
+    _init_ = 'value __doc__'
+    html = 0, "HTML/Raw Description"
+    markdown_pymarkdown = 1, "Markdown using Python Markdown"
+    markdown_marked = 2, "Markdown using JavaScript Marked"
 
 class InvalidMode(Exception):
     """Raised when you don't have the required mode (package) to perform the action such as trying to do an asynchronous API request without having aiohttp_requests installed or trying to do a webhook without fastapi+uvicorn"""

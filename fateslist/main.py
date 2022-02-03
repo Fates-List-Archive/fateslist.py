@@ -40,9 +40,9 @@ class BotClient():
         return await self.http.set_stats(guild_count, shard_count)
   
     
-    async def get_bot(self):
+    async def get_bot(self, compact: bool = True):
         """
-            Asynchronously get a bot. This does not take any parameters.
+            Asynchronously get a bot.
 
             :return: If the bot was not found or if fateslist.py could not parse the JSON request for any reason
             :rtype: None
@@ -56,7 +56,7 @@ class BotClient():
             :return: This is the bot object returned from the API
             :rtype: Bot
         """
-        return await self.http.get_bot()
+        return await self.http.get_bot(compact=compact)
 
     async def get_user_votes(self, user_id: int):
         """
