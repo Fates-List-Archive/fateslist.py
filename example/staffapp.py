@@ -16,8 +16,7 @@ async def main():
     
     responses = {}
 
-    i = 1
-    for q in questions.questions:
+    for i, q in enumerate(questions.questions, start=1):
         print(f"\nQuestion {i} of {len(questions.questions)}")
         responses[q.id] = input(f"ID: {q.id} - {q.question} - ({q.minlength} - {q.maxlength} chars) > ")
         i += 1

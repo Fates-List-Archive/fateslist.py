@@ -44,3 +44,16 @@ class SystemClient(BaseHTTP):
         if not api_res.success:
             return api_res
         return Vanity(api_res.json)
+    
+    async def get_vote_reminders(self):
+        """
+        Returns the vote reminders as a list of dicts
+        """
+        api_res = await self.request(
+            method="GET",
+            endpoint="/vote-reminders",
+        )
+
+        if not api_res.success:
+            return api_res
+        return api_res.json
